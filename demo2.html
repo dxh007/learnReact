@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/react/react.js"></script>
+	<script src="bower_components/react/react-dom.js"></script>
+	<script src="bower_components/browser/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+	var HelloMessage=React.createClass({
+		render:function(){
+			return <h1>Hello {this.props.name}
+
+						<span>{this.props.age}</span>
+						<span>{this.props.className}</span>
+					</h1>;
+		}
+		
+
+	});
+	ReactDOM.render(
+			<HelloMessage name="John" age="19" className="item1"/>,
+			document.getElementById('example')
+
+		);
+</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
