@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/react/react.js"></script>
+	<script src="bower_components/react/react-dom.js"></script>
+	<script src="bower_components/browser/
+	browser.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+	$(function(){
+		var count=0;
+		var style={
+			color:'red',
+			border:'1px solid #000'
+		};
+		var HelloWorld=React.createClass({
+			getDefaultProps:function(){
+				console.log(1);
+				return {name:"Yugo"};
+			},
+			getInitialState:function(){
+				console.log(2);
+				return {
+					myCount:count=count+1,
+					ready:"false"
+				};
+
+			},
+			componentWillMount:function(){
+				console.log(3);
+				this.setState({ready:'true'});
+			},
+			render:function(){
+				console.log(4);
+				return <p ref="childp">Hello,{this.props.name?this.props.name:"world"}<br/>{this.state.ready} {this.state.myCount}</p>
+			},
+			componentDidMount:function(){
+				console.log(5);
+				$(React.findDOMNode(this)).append('6666');
+			},
+		})
+		ReactDOM.render(
+			<div style={style}>
+				<HelloWorld></HelloWorld>
+			</div>,
+			document.getElementById('example')
+		);
+
+	})
+
+</script>
+</body>
+</html>
