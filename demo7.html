@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/react/react.js"></script>
+	<script src="bower_components/react/react-dom.js"></script>
+	<script src="bower_components/browser/
+	browser.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+	var Hello=React.createClass({
+		getInitialState:function(){
+			alert('int');
+			return {
+				opacity:1.0,
+				fontSize:'12px'
+			};
+		},
+		render:function(){
+			return <div style={{opacity:this.state.opacity,fontSize:this.state.fontSize}}>Hello{this.props.name}</div>;
+		},
+		componentWillMount:function(){
+			alert('will');
+		},
+		componentDidMount:function(){
+		alert('did')
+		var _self=this;
+		window.setTimeout(function(){
+			_self.setState({
+				opacity:0.5,
+				fontSize:'44px'
+			});
+		},1000);
+		},
+	});
+	ReactDOM.render(
+		<Hello name="world"/>,
+		document.getElementById('example')
+	);
+</script>
+</body>
+</html>
