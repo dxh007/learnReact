@@ -16,6 +16,7 @@
 <script type="text/babel">
 	var Hello=React.createClass({
 		getInitialState:function(){
+
 			return {
 				opacity:1.0,
 				fontSize:'16px'
@@ -37,12 +38,13 @@
 					});
 			},1000);
 		}
+
+		
 	});
 	ReactDOM.render(
 		<Hello name="world"/>,
 		document.getElementById('example')
 	);
-
 </script>
 </body>
 </html>
